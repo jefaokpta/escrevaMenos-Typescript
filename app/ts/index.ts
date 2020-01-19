@@ -1,7 +1,14 @@
 
-let nome: HTMLParagraphElement;
+let ul: HTMLUListElement;
 
+ul=document.querySelector('#ul');
 
-nome=document.querySelector('#ola');
-nome.textContent='Colocado pelo TYPE'
+const frutas=['banana','maca','framboesa'];
+
+frutas.forEach(f => {
+    let li=<HTMLLIElement>document.createElement('li');
+    li.addEventListener('click',() => li.classList.toggle('highlighted'));
+    li.textContent=f;
+    ul.appendChild(li);
+});
 
